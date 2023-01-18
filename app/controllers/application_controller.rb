@@ -3,4 +3,9 @@ class ApplicationController < ActionController::Base
     @products = Product.all
     render template: "products/index"
   end
-end
+
+  def first_product
+    @product = Product.first
+    render template: "products/show"
+  end
+
