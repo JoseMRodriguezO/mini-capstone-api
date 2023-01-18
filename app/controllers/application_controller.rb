@@ -8,4 +8,4 @@ class ApplicationController < ActionController::Base
     @product = Product.first
     render template: "products/show"
   end
-
+end
