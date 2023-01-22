@@ -4,6 +4,7 @@ class ProductTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
   test "is_discounted?" do
     product = Product.new(price: 11)
     assert_equal false, product.is_discounted?
