@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
       image_url: params["test.jpg"],
       description: params["set number 25114"],
     )
-    render :show
+    if @product.valid?
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -27,7 +31,11 @@ class ApplicationController < ActionController::Base
       image_url: params["image_url"] || @product.image_url,
       description: params["description"] || @product.description,
     )
-    render :show
+    if @product.valid?
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
