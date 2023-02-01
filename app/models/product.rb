@@ -11,6 +11,7 @@ class Product < ApplicationRecord
   belongs_to :supplier
 
   has_many :orders
+  has_many :categpry_products
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end
