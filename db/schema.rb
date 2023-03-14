@@ -56,7 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_030908) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 9, scale: 2
-    t.string "image_url"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
